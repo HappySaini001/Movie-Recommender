@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Recommendation</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel= "stylesheet" type= "text/css" th:href= "@{/style.css}">
+    <title>Recommendation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
 </head>
 <body id="content">
-	<div class="results">
-	    <center>
-	      <h2 id="name" class="text-uppercase" th:text="${title}"></h2>
-	    </center>
-	</div>
-	<br>
+    <div class="results">
+        <center>
+          <h2 id="name" class="text-uppercase" th:text="${title}"></h2>
+        </center>
+    </div>
+    <br />
 
     <div id="mycontent">
         <div id="mcontent">
           <div class="poster-lg">
-            <img class="poster" style="border-radius: 40px;margin-left: 90px;" height="400" width="250" th:src="${poster}">
+            <img class="poster" style="border-radius: 40px;margin-left: 90px;" height="400" width="250" th:src="${poster}" />
           </div>
           <div class="poster-sm text-center">
-            <img class="poster" style="border-radius: 40px;margin-bottom: 5%;" height="400" width="250" th:src="${poster}">
+            <img class="poster" style="border-radius: 40px;margin-bottom: 5%;" height="400" width="250" th:src="${poster}" />
           </div>
           <div id="details">
-            <br/>
+            <br />
             <h6 id="title" style="color:white;">TITLE: &nbsp;<span th:text="${title}"></span></h6>
-            <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW: <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${overview}"></span></h6>
+            <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW: <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${overview}"></span></h6>
             <h6 id="vote_average" style="color:white;">RATING: &nbsp;<span th:text="${vote_average}"></span>/10 (<span th:text="${vote_count}"></span> votes)</h6>
             <h6 id="genres" style="color:white;">GENRE: &nbsp;<span th:text="${genres}"></span></h6>
             <h6 id="date" style="color:white;">RELEASE DATE: &nbsp;<span th:text="${release_date}"></span></h6>
@@ -35,9 +35,9 @@
           </div>
         </div>
     </div>
-    <br/>
+    <br />
 
-    <div th:each="entry : ${cast_details}">
+    <div th:if="${cast_details != null}" th:each="entry : ${cast_details}">
       <div class="modal fade" th:id="${entry.value[0]}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
@@ -60,14 +60,14 @@
       </div>
     </div>
 
-    <div th:if="${casts.size() > 1}">
+    <div th:if="${casts != null and casts.size() gt 1}">
         <div class="movie" style="color: #E8E8E8;">
             <center><h3>TOP CAST</h3><h5>(Click on the cast to know more)</h5></center>
         </div>
         <div class="movie-content">
             <div th:each="entry : ${casts}" class="castcard card" style="width: 15rem;" data-toggle="modal" th:data-target="'#' + ${entry.value[0]}">
                 <div class="imghvr">
-                    <img class="card-img-top cast-img" height="360" width="240" th:src="${entry.value[2]}">
+                    <img class="card-img-top cast-img" height="360" width="240" th:src="${entry.value[2]}" />
                     <figcaption class="fig"><button class="card-btn btn btn-danger"> Know More </button></figcaption>
                 </div>
                 <div class="card-body">
@@ -79,7 +79,7 @@
     </div>
 
     <center>
-        <div th:if="${reviews != null && !reviews.isEmpty()}">
+        <div th:if="${reviews != null and !reviews.isEmpty()}">
             <h2 style="color:white">USER REVIEWS</h2>
             <div class="col-md-12" style="margin: 0 auto; margin-top:25px;">
                 <table class="table table-bordered" bordercolor="white" style="color:white">
@@ -99,19 +99,19 @@
                 </table>
             </div>
         </div>
-        <div th:unless="${reviews != null && !reviews.isEmpty()}" style="color:white;">
+        <div th:unless="${reviews != null and !reviews.isEmpty()}" style="color:white;">
             <h1 style="color:white"> This movie is not released yet. Stay tuned! </h1>
         </div>
     </center>
 
-    <div th:if="${movie_cards.size() > 1}">
+    <div th:if="${movie_cards != null and movie_cards.size() gt 1}">
         <div class="movie" style="color: #E8E8E8;">
             <center><h3>RECOMMENDED MOVIES FOR YOU</h3><h5>(Click any of the movies to get recommendation)</h5></center>
         </div>
         <div class="movie-content">
             <div th:each="entry : ${movie_cards}" class="card" style="width: 15rem;" th:title="${entry.value}" onclick="recommendcard(this)">
                 <div class="imghvr">
-                    <img class="card-img-top" height="360" width="240" th:src="${entry.key}">
+                    <img class="card-img-top" height="360" width="240" th:src="${entry.key}" />
                     <figcaption class="fig"><button class="card-btn btn btn-danger"> Click Me </button></figcaption>
                 </div>
                 <div class="card-body">

@@ -1,0 +1,4 @@
+com\happy\movie\recommender\controller\MovieController.class
+com\happy\movie\recommender\service\MovieService.class
+com\happy\movie\recommender\MovieRecommender.class
+com\happy\movie\recommender\MovieRecommenderApplication.class

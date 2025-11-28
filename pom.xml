@@ -8,13 +8,14 @@
         <version>3.1.5</version>
         <relativePath/>
     </parent>
-    <groupId>com.kishan</groupId>
+    <groupId>com.happy</groupId>
     <artifactId>movie-recommender</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>movie-recommender</name>
     <description>Movie Recommendation System</description>
     <properties>
         <java.version>17</java.version>
+        <start-class>com.happy.movie.recommender.MovieRecommenderApplication</start-class>
     </properties>
     <dependencies>
         <dependency>
@@ -41,6 +42,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                <mainClass>${start-class}</mainClass>
+            </configuration>
             </plugin>
         </plugins>
     </build>

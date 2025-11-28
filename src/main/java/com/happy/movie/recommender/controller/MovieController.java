@@ -1,16 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.happy.movie.recommender.controller;
 
-/**
- *
- * @author Happy saini
- */
-
-
-import com.kishan.movierecommender.service.MovieService;
+import com.happy.movie.recommender.service.MovieService;
+import com.happy.movie.recommender.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
