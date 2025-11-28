@@ -11,7 +11,7 @@ This application recommends movies similar to the one the user likes by analyzin
 The system uses Content-Based Filtering to recommend movies based on metadata such as cast, director, genres, keywords, and descriptions. It also supports movie search, auto-suggest, reviews scraping, and basic sentiment analysis.
 
 
-# # ⭐ Key Features
+## ⭐ Key Features
 🎥 Movie Recommendations
 
 Uses metadata from main_data.csv to identify and recommend similar movies.
