@@ -142,16 +142,35 @@ http://localhost:8081
 movie-recommender/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/happy/movierecommender/
-│   │   │   ├── MovieRecommenderApplication.java        # Main App Entry
-│   │   │   ├── controller/MovieController.java         # Handles Web Routing
-│   │   │   └── service/MovieService.java               # Logic + Scraping
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── happy/
+│   │   │           └── movie/
+│   │   │               └── recommender/
+│   │   │                   ├── MovieRecommenderApplication.java  # Main entry point
+│   │   │                   ├── controller/
+│   │   │                   │   └── MovieController.java          # Web routes
+│   │   │                   ├── model/                            # Database Entity
+│   │   │                   │   └── Movie.java                    # (New)
+│   │   │                   ├── repository/                       # Database Access
+│   │   │                   │   └── MovieRepository.java          # (New)
+│   │   │                   └── service/
+│   │   │                       └── MovieService.java             # Logic & CSV Loader
 │   │   └── resources/
-│   │       ├── static/                                 # JS, CSS, Images
-│   │       ├── templates/                              # Thymeleaf HTML
-│   │       ├── main_data.csv                           # Movie Metadata
-│   │       └── application.properties
-└── pom.xml                                              # Maven Dependencies
+│   │       ├── static/                                           # CSS/JS/Images
+│   │       │   ├── style.css
+│   │       │   ├── recommend.js
+│   │       │   ├── autocomplete.js
+│   │       │   └── loader.gif
+│   │       ├── templates/                                        # HTML Views
+│   │       │   ├── home.html
+│   │       │   └── recommend.html
+│   │       ├── application.properties                            # DB Config
+│   │       └── main_data.csv                                     # Original Dataset
+├── Dockerfile                                                    # For Render Deployment
+├── pom.xml                                                       # Dependencies
+└── README.md                                                     # Documentation
+
 
 # 🧩 System Architecture
       
