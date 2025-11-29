@@ -174,7 +174,7 @@ movie-recommender/
 
 # 🧩 System Architecture
       
- ![image alt](https://github.com/HappySaini001/Movie-Recommender/blob/162ffc9ea7783c46c9e213ca5c224f76b1c2aecb/Database%20architectre.png)
+ ![image alt](https://github.com/HappySaini001/Movie-Recommender/blob/68a446425093606e390f0a98052b675fcc55f86a/Architecture.jpg)
 # 📊 How Similarity Works
 
 Uses metadata from main_data.csv
